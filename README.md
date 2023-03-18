@@ -6,7 +6,7 @@
 
 ### Function
 1. 更换国内源
-2. 配置zsh安装powerlevel10k
+2. *配置zsh安装powerlevel10k
 
 ### Quick Start
 ```bash
@@ -17,3 +17,7 @@ python3 ./config-my-linux/main.py
 
 ### TODO
 配置zsh安装powerlevel10k
+
+Q:为什么用python而不是bash
+
+A:不会(
