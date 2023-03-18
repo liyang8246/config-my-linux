@@ -28,7 +28,7 @@ if __name__ == '__main__':
     [print(f'{i}) {name}') for i,name in enumerate(names)]
     print('Please select your system')
     info['name'] = names[int(input(f'input 0-{len(names)-1}: '))]
-    with open('test.list','r') as f:
+    with open('/etc/os-release','r') as f:
         info['version'] = [i[i.index('=')+1:-1] for i in f.readlines() if 'VERSION_CODENAME=' in i][0]
     
     if input('change sources\n(y/n): ') == 'y':
