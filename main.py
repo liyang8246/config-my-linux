@@ -15,7 +15,7 @@ def get_sources(name,version,source):
         ],'-security main contrib non-free']
     }
     sources = [f'deb {source}{name}/ {version}{i}' for i in suffix[name][0]]
-    sources.append(f'deb {source}{name}/ {version}{suffix[name][1]}')
+    sources.append(f'deb {source}{name}-security {version}{suffix[name][1]}')
     return sources
 
 if __name__ == '__main__':
