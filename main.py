@@ -1,11 +1,21 @@
 import os
 
 def get_sources(name,version,source):
-    sources = []
-    sources.append(f'deb {source}{name}/ {version} main restricted universe multiverse')
-    sources.append(f'deb {source}{name}/ {version}-updates main restricted universe multiverse')
-    sources.append(f'deb {source}{name}/ {version}-backports main restricted universe multiverse')
-    sources.append(f'deb {source}{name}/ {version}-security main restricted universe multiverse')
+    suffix = {
+        'ubuntu':[[
+            ' main restricted universe multiverse',
+            '-updates main restricted universe multiverse',
+            '-backports main restricted universe multiverse',
+            '-security main restricted universe multiverse',
+        ],'-security main restricted universe multiverse'],
+        'debian':[[
+            ' main contrib non-free',
+            '-updates main contrib non-free',
+            '-backports main contrib non-free',
+        ],'-security main contrib non-free']
+    }
+    sources = [f'deb {source}{name}/ {version}{i}' for i in suffix[name][0]]
+    sources.append(f'deb {source}{name}/ {name}{suffix[name][1]}')
     return sources
 
 if __name__ == '__main__':
