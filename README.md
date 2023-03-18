@@ -16,4 +16,4 @@ python3 ./config-my-linux/main.py
 ```
 
 ### TODO
-没想好呢
+配置zsh安装powerlevel10k
