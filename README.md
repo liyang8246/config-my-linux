@@ -10,9 +10,7 @@
 
 ### Quick Start
 ```bash
-su
-wget https://raw.githubusercontent.com/liyang8246/config-my-linux/master/main.py
-python3 ./config-my-linux/main.py
+wget https://raw.githubusercontent.com/liyang8246/config-my-linux/master/main.py && python3 ./config-my-linux/main.py
 ```
 
 ### TODO
