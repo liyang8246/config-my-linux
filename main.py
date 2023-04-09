@@ -41,12 +41,14 @@ if __name__ == '__main__':
             ]
             [print(f'{i}) {sources_name[0]}') for i,sources_name in enumerate(sources_list)]
             sources = get_sources(info['name'],info['version'],sources_list[int(input(f'input 0-{len(names)-1}: '))][1])
+            os.system('sudo chmod 777 /etc/apt/sources.list')
             with open('/etc/apt/sources.list','w') as f:
                 [f.writelines(f'{i}\n') for i in sources]
-            os.system('sudo apt update && apt install git wget -y')
+            os.system('sudo chmod 644 /etc/apt/sources.list')
+            os.system('sudo apt update && apt install nvim git wget -y')
         if info['name'] in ['manjaro']:
             os.system('sudo pacman-mirrors -c China')
-            os.system('sudo pacman -S git wget')
+            os.system('sudo pacman -S git wget nvim')
     if input('config nvim?\n(y/n): ') == 'y':
         commods = [
             'mkdir ~/.config',
